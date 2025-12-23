@@ -3,12 +3,19 @@ name: srlceos01
 
 topology:
   nodes:
-    srl:
-      kind: nokia_srlinux
-      image: ghcr.io/nokia/srlinux:24.10
+    vyos0:
+      kind: vyosnetworks_vyos
+      image: vyos:latest
     vyos1:
       kind: vyosnetworks_vyos
       image: vyos:latest
-
+    n1:
+      kind: linux
+      image: alpine:latest  
+    n2:
+      kind: linux
+      image: alpine:latest  
   links:
-    - endpoints: ["srl:ethernet-1/1", "vyos1:eth1"]
+    - endpoints: ["vyos0:eth1", "vyos1:eth1"]
+    - endpoints: ["n1:eth1", "vyos0:eth2"]
+    - endpoints: ["n2:eth1", "vyos1:eth2"]
