@@ -6,7 +6,7 @@ topology:
       kind: openwrt
       image: vrnetlab/openwrt_openwrt:25.12.4
       mgmt-ipv4: 172.20.20.12                             # optional
-      mgmt_ipv6: 2001:172:20:20::12                       # optional
+      #mgmt_ipv6: 2001:172:20:20::12                       # optional
       ports:
         - 8080:80                                         # required for LuCI web interface (HTTP); adjust host ports if running multiple nodes or based on your setup
         - 8443:443                                        # required for LuCI web interface (HTTPS); adjust host ports if running multiple nodes or based on your setup
