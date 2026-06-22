@@ -9,6 +9,6 @@ topology:
     kind: vyosnetworks_vyos
     image: vyos:latest
   links:      
-    - endpoints: ["hub:eth1", "spoke:enth1"]
+    - endpoints: ["hub:eth1", "spoke:eth1"]
       ipv4: ["10.16.0.1/24", "10.16.0.2/24"]
       
